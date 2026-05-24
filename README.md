@@ -6,20 +6,12 @@ This portfolio showcases my projects, technical skills, certifications, coding p
 
 ## Live Demo
 
-🔗 Add your deployed Vercel URL here
-
-Example:
-
-https://your-portfolio.vercel.app
+🔗 https://myportfolio-brown-three-32.vercel.app/
 
 
 ## GitHub Repository
 
-🔗 Add your GitHub repository link here
-
-Example:
-
-https://github.com/yourusername/personal-portfolio
+🔗 https://github.com/yourusername/personal-portfolio
 
 
 ## Features
