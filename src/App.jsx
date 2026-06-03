@@ -1,6 +1,7 @@
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
 import About from './sections/About'
+import Education from './sections/Education'
 import Skills from './sections/Skills'
 import Certifications from './sections/Certifications'
 import CodingProfiles from './sections/CodingProfiles'
@@ -15,6 +16,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Education />
         <Skills />
         <Certifications />
         <CodingProfiles />

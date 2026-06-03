@@ -117,7 +117,7 @@ export default function Hero() {
 
             {/* Role */}
             <p className="mt-6 text-2xl font-semibold text-indigo-200 sm:text-3xl">
-              Cloud & DevOps Engineer
+              B.Tech Student | Cloud & DevOps Engineer
             </p>
 
             {/* Description */}

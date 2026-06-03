@@ -10,7 +10,7 @@ export default function Navbar() {
       <Container className="py-4">
         <div className="flex items-center justify-between gap-4">
           <a href="#home" className="text-lg font-bold tracking-tight text-white">
-            Portfolio
+            RSV
           </a>
 
           <nav className="hidden md:block">

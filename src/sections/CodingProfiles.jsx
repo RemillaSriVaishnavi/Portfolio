@@ -17,7 +17,6 @@ export default function CodingProfiles() {
           <SectionTitle
             eyebrow="Coding Profiles"
             title="My problem solving platforms"
-            description="A quick look at the coding platforms where I practice algorithms, data structures, and competitive programming."
           />
         </motion.div>
 
