@@ -138,7 +138,7 @@ export default function Hero() {
               </a>
 
             <a
-              href="/Resume.pdf"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-8 py-4 text-base font-semibold text-cyan-300 transition duration-300 hover:bg-cyan-400/20 hover:scale-105"
