@@ -137,15 +137,8 @@ export default function Hero() {
                 View Projects
               </a>
 
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 px-8 py-4 text-base font-semibold text-white transition duration-300 hover:scale-105 hover:bg-white/5"
-              >
-                Contact Me
-              </a>
-
             <a
-              href="/resume.pdf"
+              href="/Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-8 py-4 text-base font-semibold text-cyan-300 transition duration-300 hover:bg-cyan-400/20 hover:scale-105"
