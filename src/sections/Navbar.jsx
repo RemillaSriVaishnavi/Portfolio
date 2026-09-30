@@ -1,71 +1,92 @@
-import { useState } from 'react'
-import Container from '../components/Container'
+import { useEffect, useState } from 'react'
 import { navLinks } from '../utils/constants'
+import { applyTheme, getInitialTheme } from '../utils/theme'
+// import { motion } from 'framer-motion'
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false)
+  const [theme, setTheme] = useState('dark')
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const initialTheme = getInitialTheme()
+
+    setTheme(initialTheme)
+    applyTheme(initialTheme)
+  }, [])
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+
+    setTheme(newTheme)
+    applyTheme(newTheme)
+  }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
-      <Container className="py-4">
-        <div className="flex items-center justify-between gap-4">
-          <a href="#home" className="text-lg font-bold tracking-tight text-white">
-            RSV
-          </a>
+    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-slate-950/70 backdrop-blur-xl light:border-slate-200 light:bg-white/75">
+      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-4 sm:px-8 lg:px-12 xl:px-16">
 
-          <nav className="hidden md:block">
-            <ul className="flex items-center gap-6">
-              {navLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm font-medium text-slate-300 transition hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+        {/* Logo */}
+        <a
+          href="#home"
+          className="text-xl font-extrabold tracking-wide text-white light:text-slate-900"
+        >
+          Portfolio
+        </a>
 
-          <a
-            href="#contact"
-            className="hidden rounded-full border border-indigo-400/40 bg-indigo-500/10 px-4 py-2 text-sm font-semibold text-indigo-200 transition hover:bg-indigo-500/20 md:inline-flex"
-          >
-            Let&apos;s Talk
-          </a>
+        {/* Desktop Navigation */}
+        <nav className="hidden items-center gap-6 lg:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-slate-300 transition hover:text-cyan-300 light:text-slate-600 light:hover:text-indigo-600"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
 
+        {/* Right Side */}
+        <div className="flex items-center gap-3">
+
+          {/* Theme Toggle */}
           <button
-            type="button"
-            onClick={() => setOpen((prev) => !prev)}
-            className="inline-flex items-center justify-center rounded-lg border border-white/10 p-2 text-white md:hidden"
-            aria-label="Toggle navigation menu"
-            aria-expanded={open}
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg transition duration-300 hover:scale-105 hover:bg-white/10 light:border-slate-200 light:bg-slate-100 light:hover:bg-slate-200"
           >
-            <span className="text-xl">{open ? '✕' : '☰'}</span>
+            {theme === 'dark' ? '☀️' : '🌙'}
           </button>
-        </div>
 
-        {open ? (
-          <div className="mt-4 rounded-2xl border border-white/10 bg-slate-900/95 p-4 md:hidden">
-            <nav>
-              <ul className="flex flex-col gap-3">
-                {navLinks.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      onClick={() => setOpen(false)}
-                      className="block rounded-xl px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        ) : null}
-      </Container>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-xl text-white lg:hidden light:border-slate-200 light:bg-slate-100 light:text-slate-900"
+            aria-label="Toggle menu"
+          >
+            ☰
+          </button>
+
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="border-t border-white/10 bg-slate-950/95 px-6 py-5 lg:hidden light:border-slate-200 light:bg-white/95">
+          <nav className="flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="text-sm font-medium text-slate-300 transition hover:text-cyan-300 light:text-slate-700 light:hover:text-indigo-600"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   )
 }

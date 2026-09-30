@@ -31,15 +31,15 @@ export default function Skills() {
             <motion.div
               key={category.title}
               variants={cardItem}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6"
+              className="rounded-2xl border border-white/10 bg-white/5 p-6 light:border-slate-200 light:bg-white/70"
             >
-              <h3 className="text-lg font-semibold text-white">{category.title}</h3>
+              <h3 className="text-lg font-semibold text-white light:text-slate-900">{category.title}</h3>
 
               <div className="mt-5 flex flex-wrap gap-3">
                 {category.items.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-indigo-400/20 bg-indigo-500/10 px-3 py-1 text-sm font-medium text-indigo-100"
+                    className="rounded-full border border-indigo-400/20 bg-indigo-500/10 px-3 py-1 text-sm font-medium text-indigo-100 light:border-indigo-200 light:bg-indigo-50 light:text-indigo-700"
                   >
                     {item}
                   </span>

@@ -28,7 +28,7 @@ const educationData = [
     period: '2020',
     institution: 'Pragati English Medium School',
     details: [{ label: 'Percentage', value: '96%' }],
-    icon: '👩‍🎓',
+    icon: '📚',
     side: 'left',
   },
 ]
@@ -50,10 +50,10 @@ export default function Education() {
         </motion.div>
 
         <div className="relative mt-16">
-          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-indigo-500 via-cyan-400 to-indigo-500 lg:block" />
+          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-indigo-500 via-cyan-400 to-indigo-500 light:bg-slate-200 lg:block" />
 
           <div className="space-y-12 lg:space-y-20">
-            {educationData.map((item, index) => {
+            {educationData.map((item) => {
               const isLeft = item.side === 'left'
 
               return (
@@ -74,13 +74,13 @@ export default function Education() {
                   >
                     <div className="absolute left-1/2 top-10 hidden h-6 w-6 -translate-x-1/2 rounded-full border-4 border-slate-950 bg-cyan-400 shadow-lg shadow-cyan-400/30 lg:block" />
 
-                    <div className="max-w-xl rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/20 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-white/20 sm:p-8">
+                    <div className="max-w-xl rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/20 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-white/20 sm:p-8 light:border-slate-200 light:bg-white/70">
                       <div className="mb-5 flex items-start justify-between gap-4">
                         <div>
-                          <h3 className="text-2xl font-bold text-indigo-300">
+                          <h3 className="text-xl font-bold text-white light:text-slate-900">
                             {item.title}
                           </h3>
-                          <p className="mt-2 text-sm font-medium text-slate-400">
+                          <p className="mt-2 text-sm text-slate-400 light:text-slate-500">
                             {item.period}
                           </p>
                         </div>
@@ -90,7 +90,7 @@ export default function Education() {
                         </div>
                       </div>
 
-                      <p className="text-lg font-semibold text-white">
+                      <p className="text-lg font-semibold text-white light:text-slate-900">
                         {item.institution}
                       </p>
 
@@ -98,10 +98,10 @@ export default function Education() {
                         {item.details.map((detail) => (
                           <div
                             key={detail.label}
-                            className="rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3"
+                            className="rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 light:border-slate-200 light:bg-white/50"
                           >
-                            <p className="text-sm text-slate-300">
-                              <span className="font-semibold text-white">
+                            <p className="text-sm text-slate-300 light:text-slate-600">
+                              <span className="font-semibold text-white light:text-slate-900">
                                 {detail.label}:
                               </span>{' '}
                               {detail.value}

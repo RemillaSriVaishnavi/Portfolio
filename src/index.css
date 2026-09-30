@@ -2,12 +2,12 @@
 
 @import "tailwindcss";
 
+@custom-variant light (&:where(.light, .light *));
+
 :root {
   font-family: 'Inter', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #e5e7eb;
-  background: #0f172a;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,47 +24,51 @@ body {
   min-height: 100vh;
 
   background:
-    radial-gradient(circle at top left, rgba(99, 102, 241, 0.22), transparent 28%),
-    radial-gradient(circle at top right, rgba(6, 182, 212, 0.14), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.12), transparent 28%),
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(99, 102, 241, 0.20),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(6, 182, 212, 0.15),
+      transparent 30%
+    ),
     linear-gradient(
-      135deg,
-      #030712 0%,
-      #0b1120 25%,
-      #111827 55%,
-      #0f172a 100%
+      180deg,
+      #020617 0%,
+      #0f172a 50%,
+      #111827 100%
     );
-
-  background-attachment: fixed;
 
   color: #e5e7eb;
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
 }
 
-body::before {
-  content: '';
+/* LIGHT THEME */
 
-  position: fixed;
-  inset: 0;
-
+html.light body {
   background:
     radial-gradient(
-      circle at 20% 20%,
-      rgba(99, 102, 241, 0.12),
-      transparent 25%
+      circle at 15% 10%,
+      rgba(99, 102, 241, 0.10),
+      transparent 30%
     ),
     radial-gradient(
-      circle at 80% 30%,
+      circle at 85% 20%,
       rgba(6, 182, 212, 0.08),
-      transparent 25%
+      transparent 30%
     ),
-    radial-gradient(
-      circle at 50% 80%,
-      rgba(168, 85, 247, 0.08),
-      transparent 25%
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #eef2ff 50%,
+      #f8fafc 100%
     );
 
-  pointer-events: none;
-  z-index: -1;
+  color: #0f172a;
 }
 
 * {

@@ -44,10 +44,10 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
             className="relative flex justify-center lg:justify-start"
           >
-            <div className="w-full max-w-[500px] rounded-[40px] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 backdrop-blur-sm">
+            <div className="w-full max-w-[500px] rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 backdrop-blur-sm light:border-slate-200 light:bg-white/70">
 
               {/* Image Area */}
-              <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-slate-950/70">
+              <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-slate-950/70 light:border-slate-200">
                 <div className="relative h-[420px] w-full">
 
                   <img
@@ -60,8 +60,8 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
 
                   {/* Bottom Text Card */}
-                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-slate-950/60 px-5 py-4 backdrop-blur-md">
-                    <p className="text-sm font-medium text-slate-200">
+                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-slate-950/60 px-5 py-4 backdrop-blur-md light:border-slate-200 light:bg-white/80">
+                    <p className="text-sm font-medium text-slate-200 light:text-slate-700">
                       Building modern cloud and web experiences
                     </p>
                   </div>
@@ -81,13 +81,13 @@ export default function Hero() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.5 }}
-                    className="rounded-2xl border border-white/10 bg-slate-950/60 p-5 text-center"
+                    className="rounded-2xl border border-white/10 bg-slate-950/60 p-5 text-center light:border-slate-200 light:bg-white/60"
                   >
-                    <p className="text-3xl font-bold text-white">
+                    <p className="text-3xl font-bold text-white light:text-slate-900">
                       {value}
                     </p>
 
-                    <p className="mt-1 text-sm text-slate-400">
+                    <p className="mt-1 text-sm text-slate-400 light:text-slate-500">
                       {label}
                     </p>
                   </motion.div>
@@ -104,24 +104,24 @@ export default function Hero() {
           >
 
             {/* Badge */}
-            <p className="mb-6 inline-flex rounded-full border border-indigo-400/20 bg-indigo-500/10 px-5 py-2 text-sm font-medium text-indigo-200">
+            <p className="mb-6 inline-flex rounded-full border border-indigo-400/20 bg-indigo-500/10 px-5 py-2 text-sm font-medium text-indigo-200 light:border-indigo-200 light:bg-indigo-50 light:text-indigo-700">
               Available for internships and collaboration
             </p>
 
             {/* Name */}
-            <h1 className="max-w-2xl text-5xl font-extrabold leading-none tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white light:text-slate-900 sm:text-5xl lg:text-6xl">
               REMILLA SRI
               <br />
               VAISHNAVI
             </h1>
 
             {/* Role */}
-            <p className="mt-6 text-2xl font-semibold text-indigo-200 sm:text-3xl">
+            <p className="mt-6 text-2xl font-semibold text-indigo-200 light:text-indigo-600 sm:text-3xl">
               B.Tech Student | Cloud & DevOps Engineer
             </p>
 
             {/* Description */}
-            <p className="mt-8 max-w-2xl text-lg leading-9 text-slate-300 sm:text-xl">
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 light:text-slate-600 sm:text-xl">
               I build scalable cloud solutions and modern web
               applications with clean UI, smooth workflows,
               and reliable user experiences.
@@ -137,14 +137,14 @@ export default function Hero() {
                 View Projects
               </a>
 
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-8 py-4 text-base font-semibold text-cyan-300 transition duration-300 hover:bg-cyan-400/20 hover:scale-105"
-            >
-              Resume
-            </a>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-8 py-4 text-base font-semibold text-cyan-300 transition duration-300 hover:bg-cyan-400/20 hover:scale-105 light:border-indigo-300 light:bg-indigo-50 light:text-indigo-600 light:hover:bg-indigo-100"
+              >
+                Resume
+              </a>
 
             </div>
           </motion.div>
